@@ -2,15 +2,6 @@
 let score = 0;
 let questionNumber = 0;
 
-function startQuiz() {
-    //listen for submit btn clicks
-    //remove start-window when clicked
-    $('.start-btn').on('click', function(event){
-        $(this).parent().remove();
-
-    })
-}
-
 function updateScore() {
     //should increase score by 1 if answer was correct
     score++
@@ -47,6 +38,15 @@ function generateQuestion() {
     </form>`
 }
 
+function startQuiz() {
+    //listen for submit btn clicks
+    //remove start-window when clicked
+    $('.start-btn').on('click', function(event){
+        $(this).parent().remove();
+        renderQuestion();
+    })
+}
+
 function renderQuestion() {
     //render question
     $('.question-window').html(generateQuestion())
@@ -54,10 +54,6 @@ function renderQuestion() {
     checkAnswer();
 }
 
-function renderNextQuestion() {
-    generateQuestion();
-    renderQuestion();
-}
 
 function checkAnswer() {
     //compare submited value vs obj.correctAnswer
@@ -66,21 +62,47 @@ function checkAnswer() {
         event.preventDefault();
         if($('input:checked').val()===STORE[questionNumber-1].correctAnswer){
             updateScore();
+            showCorrect();
+        } else {
+            showWrong();
         }
 
-        generateQuestion();
-        renderQuestion();
+        // generateQuestion();
+        // renderQuestion();
     })
 }
 
-function ifCorrect() {
-    
+function renderNextWindow() {
+    $('.js-btn-next').on('click', function(event){
+        // renders finish window
+        if (questionNumber===10){
+            $('.question-window').html(`<h1>FINISH!</h1>
+            <button type="button" class="js-btn-restart">Next</button>`);
+            restartQuiz()   
+        // renders next question window          
+        } else {
+            generateQuestion()
+            renderQuestion()    
+        }
+    })
 }
 
-function runQuiz() {
-    //runs all functions
-    startQuiz()
-    renderQuestion()
+function showCorrect() {
+    $('.question-window').html(`<h1>Correct!</h1>
+    <button type="button" class="js-btn-next">Next</button>`);
+    renderNextWindow()
 }
 
-$(runQuiz)
+function showWrong() {
+    $('.question-window').html(`<h1>WRONG!</h1>
+    <button type="button" class="js-btn-next">Next</button>`);
+    renderNextWindow()
+}
+
+function restartQuiz() {
+    $('.js-btn-restart').on('click', function(event){
+        location.reload()
+    })
+}
+
+$(startQuiz)
