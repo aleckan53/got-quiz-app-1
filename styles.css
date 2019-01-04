@@ -1,0 +1,75 @@
+body{
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* header */
+.logo img {
+    width: 200px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.stats{
+    margin: 0 auto;
+}
+
+ul {
+    margin-left: 30px;
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+/* main */
+/* .start-window */
+.start-window{
+    background-color: aqua;
+    height: 300px;
+}
+
+.start-window h1 {
+    text-align: center;
+    padding-top: 100px;
+}
+.start-btn {
+    display: block;
+    margin: 50px auto 0;
+    width: 10rem;
+}
+
+/* .question-window */
+.question-window { 
+    background-color: aqua;
+}
+
+.question-window h1 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+
+.answer-label {
+    display: block;
+    background-color: white;
+    line-height: 2;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.submit-btn {
+    display: block;
+    margin: 30px auto;
+}
+
+/* other classes */
+.hidden{
+    visibility: hidden;
+}
