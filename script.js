@@ -88,7 +88,7 @@ function results() {
         <h1>EXCELLENT!</h1>
         <p>Your score is ${score} out of 10!</p>
         <p>Excellent job refreshing your knowlege before watching the last season!</p><button type="button" class="js-btn-restart btn btn-1">Restart</button>`
-    } else if (8>score>=4) {
+    } else if (score<8 && score>=4) {
         return `<div class="result-icon"><img src="assets/images/targaryen.png" alt="targaryen house icon"/></div>
         <h1>Well done!</h1>
         <p>Your score is ${score} out of 10!</p>
