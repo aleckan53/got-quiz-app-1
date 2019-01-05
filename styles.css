@@ -15,7 +15,7 @@ p{
 body{
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0;
     margin: 0;
     margin-top: 10px;
@@ -57,9 +57,8 @@ ul li {
 /* main */
 
 .container{
-    padding: 50px 20px;
-    margin-top: auto;
-    margin-bottom: auto;
+    padding: 50px 0;
+    margin: 0 5%;
 }
 
 .container h1 {
@@ -71,7 +70,7 @@ ul li {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     display: block;
-    margin: 50px auto 0;
+    margin: 30px auto 0;
     width: 100%;
     background-color: rgba(255, 180, 1, 0.8);
     border: none;
@@ -96,7 +95,13 @@ ul li {
     margin: 0 auto 20px;
 }
 
-.answer-icon img{
+.result-icon {
+    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+ }
+
+.answer-icon img, .result-icon img{
     width: 100%;
 }
 
@@ -138,12 +143,12 @@ input[type="radio"]:checked{
 }
 
 fieldset label{
-    background-color: rgba(71,71,69,0.5);
+    background-color: rgba(0,0,0,0.3);
 }
 
 fieldset label:hover{
     transition: 0.3s ease-in-out;
-    background-color:rgb(235, 202, 82, 0.4);
+    background-color:rgb(41, 148, 177, 0.4);
 }
 
 fieldset label:active{
@@ -181,7 +186,13 @@ fieldset label:active{
     }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1340px){
+    .container{
+        margin: 0 25%;
+    }
+}
+
+@media (min-width: 1600px){
     .container{
         margin: 0 30%;
     }

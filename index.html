@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -15,11 +15,9 @@
 	</script>
 </head>
 <body>
-    <header>
+    <header><!--by default the same as role="banner"-->
         <div class="logo">
-            <a href="/">
-                <img src="http://pluspng.com/img-png/file-logo-game-of-thrones-png-1500.png" alt="game of thrones logo">
-            </a>
+            <img src="http://pluspng.com/img-png/file-logo-game-of-thrones-png-1500.png" alt="game of thrones logo">
         </div>
         <div class="stats hidden">
             <ul>
@@ -28,7 +26,7 @@
             </ul>
         </div>
     </header>
-    <main>
+    <main role="main">
         <div class="js-start-window container">
             <h1>Winter is coming</h1>
             <p>Hurry up, complete the quiz</p>
@@ -37,7 +35,7 @@
         <div class="js-question-window container">
         </div>
     </main>
-
+        
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
