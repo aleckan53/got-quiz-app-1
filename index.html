@@ -4,9 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?">
-	<title>GOT Quiz App</title>
-	<link href="styles.css" rel="stylesheet" type="text/css" />
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <title>GOT Quiz App</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Montserrat" rel="stylesheet">
+    <!-- css -->
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	 crossorigin="anonymous">
 	</script>
 </head>
@@ -17,7 +21,7 @@
                 <img src="http://pluspng.com/img-png/file-logo-game-of-thrones-png-1500.png" alt="game of thrones logo">
             </a>
         </div>
-        <div class="stats">
+        <div class="stats hidden">
             <ul>
                 <li>Question: <span class="js-question-number">0</span>/10</li>
                 <li>Score: <span class="js-score">0</span></li>
@@ -25,11 +29,12 @@
         </div>
     </header>
     <main>
-        <div class="start-window">
-            <h1>Ready?</h1>
-            <button type="button" class="start-btn">Start Quiz</button>
+        <div class="js-start-window container">
+            <h1>Winter is coming</h1>
+            <p>Hurry up, complete the quiz</p>
+            <button type="button" class="js-start-btn btn btn-1">Start Quiz</button>
         </div>
-        <div class="question-window">
+        <div class="js-question-window container">
         </div>
     </main>
 

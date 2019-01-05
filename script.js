@@ -22,18 +22,18 @@ function generateQuestion() {
     <form class="question-from">
         <fieldset>
             <label class="answer-label">
-                <input type="radio" name="answer" value="${STORE[questionNumber].answers[0]}">${STORE[questionNumber].answers[0]}
+                <input required type="radio" name="answer" value="${STORE[questionNumber].answers[0]}">${STORE[questionNumber].answers[0]}
             </label>
             <label class="answer-label">
-                <input type="radio" name="answer" value="${STORE[questionNumber].answers[1]}">${STORE[questionNumber].answers[1]}
+                <input required type="radio" name="answer" value="${STORE[questionNumber].answers[1]}">${STORE[questionNumber].answers[1]}
             </label>
             <label class="answer-label">
-                <input type="radio" name="answer" value="${STORE[questionNumber].answers[2]}">${STORE[questionNumber].answers[2]}
+                <input required type="radio" name="answer" value="${STORE[questionNumber].answers[2]}">${STORE[questionNumber].answers[2]}
             </label>
             <label class="answer-label">
-                <input class="a" type="radio" name="answer" value="${STORE[questionNumber].answers[3]}">${STORE[questionNumber].answers[3]}
+                <input required class="a" type="radio" name="answer" value="${STORE[questionNumber].answers[3]}">${STORE[questionNumber].answers[3]}
             </label>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="js-submit-btn btn">Submit</button>
         </fieldset>
     </form>`
 }
@@ -41,19 +41,19 @@ function generateQuestion() {
 function startQuiz() {
     //listen for submit btn clicks
     //remove start-window when clicked
-    $('.start-btn').on('click', function(event){
+    $('.js-start-btn').on('click', function(event){
         $(this).parent().remove();
         renderQuestion();
+        $('.stats').removeClass('hidden')
     })
 }
 
 function renderQuestion() {
     //render question
-    $('.question-window').html(generateQuestion())
+    $('.js-question-window').html(generateQuestion())
     updateQuestionNumber();
     checkAnswer();
 }
-
 
 function checkAnswer() {
     //compare submited value vs obj.correctAnswer
@@ -76,8 +76,8 @@ function renderNextWindow() {
     $('.js-btn-next').on('click', function(event){
         // renders finish window
         if (questionNumber===10){
-            $('.question-window').html(`<h1>FINISH!</h1>
-            <button type="button" class="js-btn-restart">Next</button>`);
+            $('.js-question-window').html(`<h1>FINISH!</h1>
+            <button type="button" class="js-btn-restart btn btn-1">Next</button>`);
             restartQuiz()   
         // renders next question window          
         } else {
@@ -88,14 +88,18 @@ function renderNextWindow() {
 }
 
 function showCorrect() {
-    $('.question-window').html(`<h1>Correct!</h1>
-    <button type="button" class="js-btn-next">Next</button>`);
+    $('.js-question-window').html(`<div class="answer-icon"><img src="assets/images/starks.png" alt="correct answer icon"/></div>
+    <h1>Correct!</h1>
+    <p>Keep it up Young Wolf!</p>
+    <button type="button" class="js-btn-next btn btn-1">Next</button>`);
     renderNextWindow()
 }
 
 function showWrong() {
-    $('.question-window').html(`<h1>WRONG!</h1>
-    <button type="button" class="js-btn-next">Next</button>`);
+    $('.js-question-window').html(`<div class="answer-icon"><img src="assets/images/boltons.png" alt="correct answer icon"/></div>
+    <h1>Wrong!</h1>
+    <p>The correct answer is: <span class="correct-answer">"${STORE[questionNumber-1].correctAnswer}"</span>
+    <button type="button" class="js-btn-next btn btn-1">Next</button>`);
     renderNextWindow()
 }
 
