@@ -39,7 +39,7 @@ function generateQuestion() {
 
 function startQuiz() {
     // listen for start btn click => removes start-window when clicked
-    $('.js-start-btn').on('click', function(event){
+    $('.js-start-btn'||'.js-btn-restart').on('click', function(event){
         $(this).parent().remove();
         renderQuestion();
         $('.stats').removeClass('hidden');
@@ -122,7 +122,13 @@ function showWrong() {
 function restartQuiz() {
     // restarts page
     $('.js-btn-restart').on('click', function(event){
-        location.reload();
+        // was location.reload();
+        score = -1;
+        updateScore();
+        questionNumber = 0;
+        generateQuestion();
+        renderQuestion();
+        renderNextWindow();
     });
 };
 
