@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?">
   <title>GOT Quiz App</title>
   <!-- fonts -->
@@ -24,17 +24,19 @@
     </div>
     <div class="stats hidden">
       <ul>
-        <li>Question: <span class="js-question-number">0</span>/10</li>
         <li>Score: <span class="js-score">0</span></li>
-        <li>Time: <span class="timer">2:00</span></li>
+        <li><span class="js-question-number">0</span>/10</li>
+        <li><span class="timer">2:00</span></li>
       </ul>
     </div>
   </header>
   <main role="main">
     <header class="js-start-window container">
-      <h1>Winter is coming</h1>
-      <p>Hurry up, complete the quiz</p>
-      <button type="button" class="js-start-btn btn btn-1">Start Quiz</button>
+      <div class="start">
+        <h1>Winter is coming</h1>
+        <p>Hurry up, complete the quiz</p>
+        <button type="button" class="js-start-btn btn btn-1">Start Quiz</button>    
+      </div>
     </header>
     <section class="js-question-window container">
     </section>

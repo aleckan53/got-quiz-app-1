@@ -61,7 +61,7 @@ function startQuiz() {
     renderQuestion();
     $('.stats').removeClass('hidden');
     genTimer();
-
+    $('.js-start-window').remove()
   });
 };
 
